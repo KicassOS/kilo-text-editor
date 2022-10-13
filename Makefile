@@ -1,12 +1,13 @@
+NAME = kilo.out
 FLAGS = -Wall -Wextra -Werror
 CC = gcc --std=c99
 
 SRC = main.c
 OBJ = $(SRC:.c=.o)
-all: kilo.out
+all: $(NAME)
 
-kilo.out: $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o kilo
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	rm *.o
